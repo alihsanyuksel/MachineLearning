@@ -62,3 +62,17 @@ print(len(y_train))
 print(sum(y_train == 1))
 print(sum(y_train == 0))
 
+#K-Nearest-Neighbor
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
+
+knn_model = KNeighborsClassifier(n_neighbors=5)
+knn_model.fit(X_train, y_train)
+
+y_pred = knn_model.predict(X_test)
+
+print(y_pred)
+
+#precision(in model prediction correct ones), recall (in all desired label correct ones), f1-score: balanced precision and recall
+print(classification_report(y_test, y_pred))
