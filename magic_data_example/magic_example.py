@@ -76,3 +76,14 @@ print(y_pred)
 
 #precision(in model prediction correct ones), recall (in all desired label correct ones), f1-score: balanced precision and recall
 print(classification_report(y_test, y_pred))
+
+#Naive Bayes
+
+from sklearn.naive_bayes import GaussianNB
+
+nb_model = GaussianNB()
+nb_model = nb_model.fit(X_train, y_train)
+
+y_pred = nb_model.predict(X_test)
+
+print(classification_report(y_test, y_pred))
